@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 public class Pessoa {
@@ -29,6 +30,16 @@ public class Pessoa {
      */
     @Deprecated
     public Pessoa() {
+    }
+
+    public Boolean tem18AnosOuMaisDeIdade() {
+        Integer idade = Period.between(this.dataNascimento, LocalDate.now()).getYears();
+
+        if (idade >= 18) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Long getId() {
