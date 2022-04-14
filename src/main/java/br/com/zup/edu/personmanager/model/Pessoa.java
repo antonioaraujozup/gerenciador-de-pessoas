@@ -45,4 +45,20 @@ public class Pessoa {
     public Long getId() {
         return id;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getApelido() {
+        return apelido;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
 }
